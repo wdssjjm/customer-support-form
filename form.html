@@ -50,7 +50,7 @@
 <body>
     <div class="container">
         <h1>Müşteri Hizmetleri Eklentisi</h1>
-        <form id="contact-form">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <label for="username">Kullanıcı Adı:</label>
             <input type="text" id="username" name="username" required><br>
 
@@ -70,24 +70,5 @@
             <button type="submit">Gönder</button>
         </form>
     </div>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var issue = document.getElementById('issue').value;
-            var description = document.getElementById('description').value;
-            
-            var mailtoLink = 'mailto:btna-support@wizardgames.cn' +
-                             '?subject=' + encodeURIComponent('Yeni Müşteri Hizmetleri Talebi') +
-                             '&body=' + encodeURIComponent('Kullanıcı Adı: ' + username + '\n' +
-                                                           'E-posta Adresi: ' + email + '\n' +
-                                                           'Sorun Türü: ' + issue + '\n' +
-                                                           'Açıklama: ' + description);
-            
-            window.location.href = mailtoLink;
-        });
-    </script>
 </body>
 </html>
